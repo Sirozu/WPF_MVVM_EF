@@ -22,21 +22,21 @@ namespace Patient.Commands
                 MainViewModel selected = parameter as MainViewModel;
 
 
-                Person tmpObjPers = new Person(selected.FirstName, selected.LastName,
-                    selected.MiddleName, selected.Sex, selected.Birthday, selected.HomeAdress,
-                    selected.Phone, new VisitDoc(selected.DateVisit, selected.TypeVisit, selected.Diagnosis));
+                Person tmpObjPers = new Person(selected.Person.FirstName, selected.Person.LastName,
+                   selected.Person.MiddleName, selected.Person.Sex, selected.Person.Birthday, selected.Person.HomeAdress,
+                   selected.Person.Phone, new VisitDoc(selected.Person.Visit.DateVisit, selected.Person.Visit.TypeVisit, selected.Person.Visit.Diagnosis));
                 selected.Persons.Add(tmpObjPers);
 
-                selected.FirstName = "";
-                selected.LastName = "";
-                selected.MiddleName = "";
-                selected.Sex = "";
-                selected.Birthday = "";
-                selected.HomeAdress = "";
-                selected.Phone = "";
-                selected.DateVisit = "";
-                selected.TypeVisit = "";
-                selected.Diagnosis = "";
+                selected.Person.FirstName = "";
+                selected.Person.LastName = "";
+                selected.Person.MiddleName = "";
+                selected.Person.Sex = "";
+                selected.Person.Birthday = "";
+                selected.Person.HomeAdress = "";
+                selected.Person.Phone = "";
+                selected.Person.Visit.DateVisit = "";
+                selected.Person.Visit.TypeVisit = "";
+                selected.Person.Visit.Diagnosis = "";
 
                 using (DataBase db = new DataBase())
                 {
